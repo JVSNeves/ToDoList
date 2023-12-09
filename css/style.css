@@ -41,6 +41,11 @@ nav ul li button{
     border-style: none;  
 }
 
+nav ul li button:hover{
+    cursor: pointer;
+    background-color: #412e855d;
+}
+
 .logo{
     border-radius: 10px;
     margin-left: 10px;
