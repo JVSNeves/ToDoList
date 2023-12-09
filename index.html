@@ -68,7 +68,6 @@
         function Enviar() {
             mostrarLista();
             
-
             titulotarefa = document.getElementById("titulo").value;
 
             desctarefa = document.getElementById("desc").value;
@@ -118,23 +117,22 @@
             btnremove.setAttribute('class', 'btn-remove');
 
             btncheck.setAttribute('class', 'btn-check');
-
-            btncheck.setAttribute('id', 'btn-checkid');
             
-            const btn = document.getElementById("btn-checkid");
+            const btn = document.getElementsByClassName("btn-check");
+            
+            let modo2 = 1;
 
-            btncheck.onclick = function(){ 
-                let modo2 = 1;
+            btncheck.onclick = function(obj){ 
+                
                 if(modo2 == 1){
-                    btn.style.color = "rgb(245, 245, 245)";
-                    btn.style.backgroundColor = "rgb(0, 175, 0)";
+                    this.style.color = "rgb(245, 245, 245)";
+                    this.style.backgroundColor = "rgb(0, 175, 0)";
                     modo2 = 0;
-                }
-                /*if(modo2 == 0){
-                    btn.style.color = "rgb(0, 175, 0)";
-                    btn.style.backgroundColor = "rgb(245, 245, 245)";
+                } else{
+                    this.style.color = "rgb(0, 175, 0)";
+                    this.style.backgroundColor = "rgb(245, 245, 245)";
                     modo2 = 1;
-                }*/
+                }
             }
 
             document.getElementById("titulo").value = "";
@@ -143,4 +141,3 @@
     </script>
 </body>
 </html>
-
