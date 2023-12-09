@@ -16,6 +16,8 @@ header{
     justify-content: space-between;
     color: whitesmoke;
     margin-bottom: 100px;
+    position: fixed;
+    width: 100%;
 }
 nav{
     margin-right: 10px;
