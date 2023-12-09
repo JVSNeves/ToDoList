@@ -4,21 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefas</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header>
         <img class="logo" height="70px" src="img/bolinhaboa.jpg" alt="">
         <nav>
             <ul>
-                <li><button>Adicionar Tarefa</button></li>
-                <li><button>Lista de Tarefas</button></li>
+                <li><button onclick="adicionarTarefa();">Adicionar Tarefa</button></li>
+                <li><button onclick="mostrarLista();">Lista de Tarefas</button></li>
             </ul>
         </nav>
     </header>
-    <form>
-        <input type="text" placeholder=" Título da tarefa">
-        <input type="text" placeholder="vose q sabe">
-    </form>
+        <div style="text-align: center;" id="addtarefa">
+            <h1>Adicione uma tarefa!</h1>
+            <div class="form-container">
+                <input id="titulo" type="text"  placeholder="Título">
+                <textarea id="desc" cols="30" rows="7" placeholder="Descrição"></textarea>
+                <button class="submit" onclick="Enviar();">Adicionar</button>
+            </div>   
+        </div>
+
+        <div style="text-align: center;" id="listatarefa">
+            <h1>Lista de tarefas!</h1>
+
+        </div>
+
+
+
+    <script>
+
+        let modo = 1;
+        
+        const lista = document.getElementById("listatarefa").style;
+        const tarefa = document.getElementById("addtarefa").style;
+        let titulotarefa = "";
+        let desctarefa = "";
+
+        (function init(){
+            lista.display = "none";
+        })();
+
+        function mostrarLista(){
+            if (modo == 1) {
+                lista.display = "block";
+                tarefa.display = "none";
+                modo = 0;
+            }
+        }
+
+        function adicionarTarefa() {
+            if (modo == 0) {
+                lista.display = "none";
+                tarefa.display = "block";
+                modo = 1;
+            }
+        }
+
+        function Enviar() {
+            mostrarLista();
+            
+
+            titulotarefa = document.getElementById("titulo").value;
+
+            desctarefa = document.getElementById("desc").value;
+
+            div1 = document.getElementById("listatarefa");
+
+            divNova = document.createElement("div");
+            
+            elemento = document.createElement("h2");
+
+            elemento2 = document.createElement("p");
+
+            btnremove = document.createElement("button");
+
+            btncheck = document.createElement("button");
+
+            titleText = document.createTextNode(titulotarefa);
+
+            titleText2 = document.createTextNode(desctarefa);
+
+            btnremoveText = document.createTextNode("Excluir");
+
+            btncheckText = document.createTextNode("Concluída");
+
+            elemento.appendChild(titleText);
+
+            elemento2.appendChild(titleText2);
+
+            btnremove.appendChild(btnremoveText);
+
+            btncheck.appendChild(btncheckText);
+
+            divNova.appendChild(elemento);
+
+            divNova.appendChild(elemento2);
+
+            divNova.appendChild(btnremove);
+
+            divNova.appendChild(btncheck);
+            
+            div1.appendChild(divNova);
+
+            btnremove.onclick = function(){
+                this.parentElement.remove();
+            };
+
+            btnremove.setAttribute('class', 'btn-remove');
+
+            btncheck.setAttribute('class', 'btn-check');
+
+            btncheck.setAttribute('id', 'btn-checkid');
+            
+            const btn = document.getElementById("btn-checkid");
+
+            btncheck.onclick = function(){ 
+                let modo2 = 1;
+                if(modo2 == 1){
+                    btn.style.color = "rgb(245, 245, 245)";
+                    btn.style.backgroundColor = "rgb(0, 175, 0)";
+                    modo2 = 0;
+                }
+                /*if(modo2 == 0){
+                    btn.style.color = "rgb(0, 175, 0)";
+                    btn.style.backgroundColor = "rgb(245, 245, 245)";
+                    modo2 = 1;
+                }*/
+            }
+
+            document.getElementById("titulo").value = "";
+            document.getElementById("desc").value = "";
+            }
+    </script>
 </body>
 </html>
+
