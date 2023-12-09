@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -13,7 +15,7 @@ header{
     align-items: center;
     justify-content: space-between;
     color: whitesmoke;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 nav{
     margin-right: 10px;
@@ -44,21 +46,150 @@ nav ul li button{
     margin-left: 10px;
 }
 
-form{
-    background-color: whitesmoke;
-    display: flex;
-    width: 60%;
-    height: 100px;
-    margin-left: 20%;
-    flex-direction: column;
-}
 input{
     border-style: none;
-    box-shadow: 2px 3px 5px rgb(39, 43, 43);
+    box-shadow: 2px 3px 5px rgb(190, 193, 193);
     height: 40px;
     margin: 10px 0;
-    max-width: 80%;
+    max-width: 60%;
     min-width: 80px;
-    padding-left: 7px;
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-left: 20%;
+    margin-top: 10%;
+    font-size: 15px;
+}
+input:focus{
+    outline-color: #523ad8af;
+    outline-style: solid;
+    outline-offset: 1px;
+}
+
+textarea{
+    border-style: none;
+    box-shadow: 2px 3px 5px rgb(190, 193, 193);
+    height: 100px;
+    max-height: 150px;
+    min-height: 40px;
+    margin: 10px 0;
+    max-width: 60%;
+    min-width: 60%;
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-left: 20%;
+    margin-top: 5%;
+    padding-top: 5px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+textarea:focus{
+    outline-color: #523ad8af;
+    outline-style: solid;
+    outline-offset: 1px;
+}
+
+.form-container{
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    width: 30%;
+    height: auto;
+    margin-left: 35%;
+    flex-direction: column;
+}
+h1{
+    margin-bottom: 40px; 
+    font-size: 40px; 
+    color: #523ad8af;
+}
+
+#listatarefa div{
+    text-align: left;
+    background-color: rgb(245, 245, 245);
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 10px;
+    height: auto;
+    margin-bottom: 15px;
+    word-break: break-all;
+}
+
+#listatarefa div h2{
     margin-left: 5%;
+    padding-top: 10px;
+    font-size: 28px;
+    margin-right: 3%;
+}
+
+#listatarefa div p{
+    margin-left: 8%;
+    margin-top: 10px;
+    padding-bottom: 5%;
+    margin-right: 3%;
+    font-size: 20px;
+}
+
+.btn-remove{
+    color: rgb(184, 0, 0);
+    background-color: rgb(245, 245, 245);
+    margin-bottom: 10px;
+    margin-left: 20px;
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 18px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(184, 0, 0);
+}
+
+.btn-check{
+    color: rgb(0, 175, 0);
+    background-color: rgb(245, 245, 245);
+    margin-bottom: 10px;
+    margin-left: 20px;
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 18px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(0, 175, 0);
+}
+
+.submit{
+    font-size: 25px;
+    width: 30%;
+    margin-left: 35%;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #523ad8af;
+    height: 45px;
+    border-radius: 6px;
+    color: #523ad8af;
+    margin-bottom: 30px;
+}
+
+.submit:hover{
+    cursor: pointer;
+    background-color: #523ad8af;
+    color: #ffffff;
+}
+
+.btn-remove:hover{
+    cursor: pointer;
+    color: rgb(245, 245, 245);
+    background-color: rgb(184, 0, 0);
+    transition: 0.2s;
+}
+
+.btn-check:hover{
+    cursor: pointer;
 }
